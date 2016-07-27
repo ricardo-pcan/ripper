@@ -4,7 +4,7 @@
     export PYENV_ROOT=/home/$USER/.pyenv/
     export PYENV_SHIMS=/home/$USER/.pyenv/shims/
     export JENV_ROOT=/home/$USER/.jenv/
-    export RIPPER_ROOT=/home/$USER/
+    export RIPPER_ROOT=/home/$USER/.ripper
     export RIPPER_MEDIA_ROOT=/home/$USER/mysync/
 
 # System configs
@@ -81,7 +81,7 @@
 
 # Exports
     export LANG=en_US.UTF-8
-    export PATH="$JENV_ROOT/bin:$PYENV_SHIMS:$PATH:$HOME/.rvm/bin:$PYENV_ROOT/bin" # Add RVM to PATH for scripting
+    export PATH="$JENV_ROOT/bin:$PYENV_SHIMS:$PATH:$HOME/.rvm/bin:$PYENV_ROOT/bin:$RIPPER_ROOT/bin" # Add RVM to PATH for scripting
     export SSH_KEY_PATH="~/.ssh/dsa_id"
     export NVM_DIR="/home/ripper/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -89,3 +89,4 @@
 # Evals
     eval "$(jenv init -)"
     eval "$(pyenv init -)"
+    eval "$(ripper init -)"
