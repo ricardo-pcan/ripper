@@ -5,7 +5,7 @@
 # @params name. Name of project
 
 txp () {
-    chk_project_name_arg
+    chk_project_name_arg $1
 
     tmux new-session -s code-$1 -n code -d
     echo -e "\e[1m\e[34m Code session for $1 is created.\e[0m"
@@ -20,7 +20,7 @@ txp () {
 # @params name. Name of project
 
 txdp () {
-    chk_project_name_arg
+    chk_project_name_arg $1
     tmux kill-session -t code-$1
     echo -e "\e[1m\e[95m Console session for $1 is kill.\e[0m"
 
