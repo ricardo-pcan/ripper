@@ -1,4 +1,0 @@
-set hidden
-nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
-nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
-nnoremap <C-X> :bd<CR>      " close single buffer, if has changes needs ! to force"
