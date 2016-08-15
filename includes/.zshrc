@@ -63,7 +63,7 @@
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-    plugins=(git, wd, common-aliases, dircycle, fabric, git, git-extras, httpie, per-directory-history, rand-quote, taskwarrior, terminitor, vi-mode, web-search)
+    plugins=(git wd vi-mode)
 
 # User configuration
 
@@ -107,6 +107,25 @@
     if [ -d "$HOME/.local/bin" ]; then
         PATH="$HOME/.local/bin:$PATH"
     fi
+
+#vi-mode
+    bindkey -v
+
+    bindkey '^P' up-history
+    bindkey '^N' down-history
+    bindkey '^?' backward-delete-char
+    bindkey '^h' backward-delete-char
+    bindkey '^w' backward-kill-word
+    bindkey '^r' history-incremental-search-backward
+    function zle-line-init zle-keymap-select {
+        VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+        RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+        zle reset-prompt
+    }
+
+    zle -N zle-line-init
+    zle -N zle-keymap-select
+    export KEYTIMEOUT=1
 
 # Evals
     eval "$(jenv init -)"
