@@ -59,9 +59,13 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 #bindsym $mod+F2 exec palemoon
 bindsym $mod+F10 exec pcmanfm
-bindsym $mod+Shift+10 exec gksu pcmanfm
-bindsym $mod+F11 exec chromium; exec "bash -c 'sleep 0.2s;i3-msg floating enable;i3-msg resize set 1000px 700px;i3-msg move position 500px 50px;i3-msg move scratchpad'"
+bindsym $mod+Shift+F10 exec gksu pcmanfm
 bindsym $mod+Shift+F11 exec chromium; exec "bash -c 'sleep 0.2s;i3-msg floating enable;i3-msg resize set 1000px 700px;i3-msg move position 500px 50px'"
+bindsym $mod+F12 exec arandr;
+
+bindsym $mod_a+1 exec --no-startup-id gnome-terminal; exec "bash -c 'sleep 0.2s;i3-msg floating enable; i3-msg resize set 1200px 600px; i3-msg mark tasks; i3-msg move position center; i3-msg move scratchpad'"
+bindsym $mod_a+2 exec --no-startup-id chromium ; exec "bash -c 'sleep 0.3s; i3-msg floating enable; i3-msg resize set 1000px 900px; i3-msg mark music; i3-msg move position center; i3-msg move scratchpad'"
+bindsym $mod_a+3 exec --no-startup-id gnome-terminal-terminal; exec "bash -c 'sleep 0.3s; i3-msg floating enable; i3-msg resize set 500px 500px; i3-msg mark pomodoro; i3-msg move position center; i3-msg move scratchpad; thyme'"
 #bindsym $mod+F5 exec terminal -e 'mocp'
 #bindsym $mod+t exec --no-startup-id pkill compton
 #bindsym $mod+Ctrl+t exec --no-startup-id compton -b
@@ -135,7 +139,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Workspace names
- set $ws1 Test:
+# set $ws1 Test:
 # set $ws2 2:
 # set $ws3 3:
 # set $ws3 4:
@@ -234,7 +238,13 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="floatingChromium"] floating enable
+
+
+# Scratchpad windows
+
+bindsym $mod_a+t [con_mark="^tasks$"] scratchpad show
+bindsym $mod_a+m [con_mark="^music$"] scratchpad show
+bindsym $mod_a+p [con_mark="^pomodoro$"] scratchpad show
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -306,6 +316,10 @@ exec --no-startup-id clipit
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
+
+exec --no-startup-id gnome-terminal; exec "bash -c 'sleep 0.2s;i3-msg floating enable; i3-msg resize set 1200px 600px; i3-msg mark tasks; i3-msg move position center; i3-msg move scratchpad'"
+exec --no-startup-id chromium ; exec "bash -c 'sleep 0.6s; i3-msg floating enable; i3-msg resize set 1000px 900px; i3-msg mark music; i3-msg move position center; i3-msg move scratchpad'"
+exec --no-startup-id gnome-terminal ; exec "bash -c 'sleep 0.8s; i3-msg floating enable; i3-msg resize set 500px 500px; i3-msg mark pomodoro; i3-msg move position center; i3-msg move scratchpad; thyme'"
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
