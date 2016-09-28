@@ -1,3 +1,4 @@
+Bundle 'editorconfig/editorconfig-vim'
 set hidden
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
@@ -13,3 +14,4 @@ augroup myvimrchooks
     au!
     autocmd bufwritepost .vimrc source ~/.vimrc
 augroup END
+
