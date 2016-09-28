@@ -38,6 +38,26 @@ load_config() {
 
     fi
 
+    if [ -f ~/.rofirc ]; then
+        echo -e "\n \e[92m Set the rofi options ..\e[0m"
+        rm ~/.rofirc
+        ln -sf $HOME/.ripper/includes/.rofirc $HOME/
+    else
+        echo -e "\n \e[92m Set the rofi options ..\e[0m"
+        echo -e "\n \e[92m Copy the rofi options ..\e[0m"
+        ln -sf $HOME/.ripper/includes/.rofirc $HOME/
+    fi
+
+    if [ -d ~/.fonts ]; then
+        echo -e "\n \e[92m Set the fonts options ..\e[0m"
+        rm -r ~/.fonts
+        ln -s $HOME/.ripper/includes/.fonts $HOME/
+    else
+        echo -e "\n \e[92m Set the fonts options ..\e[0m"
+        echo -e "\n \e[92m Copy the fonts options ..\e[0m"
+        ln -s $HOME/.ripper/includes/.fonts $HOME/
+    fi
+
     if [ -f ~/.vimrc.local ]; then
         echo -e "\n \e[92m Set the vim options ..\e[0m"
         rm ~/.vimrc.local
@@ -66,6 +86,7 @@ load_config() {
         sudo systemctl start docker
         sudo pacman -S --noconfirm pulseaudio
         sudo pacman -S --noconfirm httpie
+        sudo pacman -S --noconfirm rofi
     }
 
     install_powerline() {
