@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 load_config() {
     # Check if ripper config files exists in the environment
     if [ -f ~/.zshrc ]; then
@@ -87,6 +86,8 @@ load_config() {
         sudo pacman -S --noconfirm pulseaudio
         sudo pacman -S --noconfirm httpie
         sudo pacman -S --noconfirm rofi
+        clone_ripper
+        load_config
     }
 
     install_powerline() {
@@ -107,5 +108,6 @@ load_config() {
         fi
         git clone https://github.com/ricardo-pcan/ripper.git ~/.ripper
     }
+
 
 
