@@ -50,7 +50,7 @@ floating_modifier $mod
 # is used in the bar {} block below.
 font pango:System San Francisco Display 11
 
-bindsym $mod+Return exec gnome-terminal -e tmux
+bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run -font "System San Francisco Display 20" -lines 3 -eh 2 -width 100 -padding 400 -opacity "95" -bw 0 -config ~/.rofirc
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -174,7 +174,10 @@ bindsym $mod+$mod_a+l move workspace to output left
 bindsym $mod+$mod_a+Left move workspace to output left
 bindsym $mod+$mod_a+h move workspace to output right
 bindsym $mod+$mod_a+Right move workspace to output right
-
+bindsym $mod+$mod_a+k move workspace to output up
+bindsym $mod+$mod_a+Up move workspace to output up
+bindsym $mod+$mod_a+j move workspace to output down
+bindsym $mod+$mod_a+Down move workspace to output down
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $workspace1; workspace $workspace1

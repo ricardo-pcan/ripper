@@ -77,6 +77,7 @@ load_config() {
         sudo pacman -S --noconfirm git
         sudo pacman -S --noconfirm chromium
         sudo pacman -S --noconfirm virtualbox
+        sudo pacman -S --noconfirm gnome-terminal
         sudo pacman -S --noconfirm vagrant
         sudo pacman -S --noconfirm tmux
         sudo pacman -S --noconfirm zsh
@@ -86,8 +87,6 @@ load_config() {
         sudo pacman -S --noconfirm pulseaudio
         sudo pacman -S --noconfirm httpie
         sudo pacman -S --noconfirm rofi
-        clone_ripper
-        load_config
     }
 
     install_powerline() {
@@ -110,4 +109,4 @@ load_config() {
     }
 
 
-
+$@
