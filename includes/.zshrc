@@ -12,7 +12,8 @@
     export TERM="xterm-256color"
 
 # Set name of the theme to load.
-    ZSH_THEME="powerlevel9k/powerlevel9k"
+    #ZSH_THEME="powerlevel9k/powerlevel9k"
+    ZSH_THEME="agnoster"
     POWERLEVEL9K_PROMPT_ON_NEWLINE=true
     POWERLEVEL9K_DISABLE_RPROMPT=true
     POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -130,4 +131,3 @@
 # Evals
     eval "$(jenv init -)"
     eval "$(pyenv init -)"
-    eval "$(ripper init -)"

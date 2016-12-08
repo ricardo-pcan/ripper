@@ -14,6 +14,18 @@ load_config() {
         source ~/.zshrc
     fi
 
+    if [ -f ~/.gitconfig ]; then
+        echo -e "\n \e[92m Set the git options ..\e[0m"
+        rm ~/.gitconfig
+        ln -sf $HOME/.ripper/includes/.gitconfig $HOME/
+        source ~/.gitconfig
+    else
+        echo -e "\n \e[92m Set the git options ..\e[0m"
+        echo -e "\n \e[92m Copy the git options ..\e[0m"
+        ln -sf $HOME/.ripper/includes/.gitconfig $HOME/
+        source ~/.gitconfig
+    fi
+
     if [ -f ~/.tmux.conf ]; then
         echo -e "\n \e[92m Set the tmux options ..\e[0m"
         rm ~/.tmux.conf
@@ -87,6 +99,7 @@ load_config() {
         sudo pacman -S --noconfirm pulseaudio
         sudo pacman -S --noconfirm httpie
         sudo pacman -S --noconfirm rofi
+        yaourt -S --noconfirm spotify
     }
 
     install_powerline() {

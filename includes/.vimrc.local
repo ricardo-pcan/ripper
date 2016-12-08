@@ -1,17 +1,36 @@
-Bundle 'editorconfig/editorconfig-vim'
-set hidden
-nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
-nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
-nnoremap <C-X> :bd<CR>      " close single buffer, if has changes needs ! to force"
+"PLUGINS
+    Plugin 'editorconfig/editorconfig-vim'
+    Plugin 'joonty/vim-phpqa.git'
+    Plugin 'christoomey/vim-tmux-navigator'
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set laststatus=2
-set t_Co=256
+"VIM AIRLINE
+    set laststatus=2
+    let g:airline#extensions#rabline#enabled = 1
+    let g:airline_theme='durant'
+    let g:airline_powerline_fonts = 1
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
 
-augroup myvimrchooks
-    au!
-    autocmd bufwritepost .vimrc source ~/.vimrc
-augroup END
+"PHP LINTER
+let g:phpqa_codesniffer_args = "--standard=PSR1,PSR2"
+let g:phpqa_messdetector_ruleset = "~/.config/composer/vendor/bin/phpmd"
+let g:phpqa_codesniffer_cmd = "~/.config/composer/vendor/bin/llphpcs"
 
+"CUSTOM HOT KEYS
+    set hidden
+    nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+    nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+    nnoremap <C-X> :bd<CR>      " close single buffer, if has changes needs ! to force"
+
+"OTHERS AND FRIENDS
+    set t_Co=256
+
+    augroup myvimrchooks
+        au!
+        autocmd bufwritepost .vimrc source ~/.vimrc
+    augroup END
