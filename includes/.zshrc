@@ -6,6 +6,7 @@
     export JENV_ROOT=/home/$USER/.jenv/
     export RIPPER_ROOT=/home/$USER/.ripper
     export RIPPER_MEDIA_ROOT=/home/$USER/mysync/
+    export LD_LIBRARY_PATH=/usr/lib64/
 
 # System configs
     export EDITOR='vim'

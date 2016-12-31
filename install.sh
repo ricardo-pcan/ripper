@@ -86,7 +86,6 @@ load_config() {
     bootstrap() {
         # Install aplications
         sudo pacman -Syu
-        sudo pacman -S --noconfirm git
         sudo pacman -S --noconfirm chromium
         sudo pacman -S --noconfirm virtualbox
         sudo pacman -S --noconfirm gnome-terminal
@@ -100,6 +99,10 @@ load_config() {
         sudo pacman -S --noconfirm httpie
         sudo pacman -S --noconfirm rofi
         yaourt -S --noconfirm spotify
+        yaourt -S --noconfirm gpmdp
+
+        install_nozbe
+        load_config
     }
 
     install_powerline() {
@@ -112,12 +115,22 @@ load_config() {
         git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
     }
 
+    install_nozbe() {
+        echo -e "\n \e[92m Install Nozbe \e[0m"
+        cd
+        wget https://files.nozbe.com/330/NozbeLinux.tar
+        tar -xvf ~/NozbeLinux.tar
+        cd ~/LinuxInstaller/
+        ./downloader.sh
+    }
+
     clone_ripper() {
         # Clone the ripper project
         echo -e "\n \e[92m Clone the ripper project\e[0m"
         if [ -d ~/.ripper ]; then
             echo -e "\n \e[92m  project\e[0m"
         fi
+        sudo pacman -S git
         git clone https://github.com/ricardo-pcan/ripper.git ~/.ripper
     }
 
