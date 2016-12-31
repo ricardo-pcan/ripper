@@ -77,6 +77,17 @@ else
 
 fi
 
+if [ -f ~/.i3status.conf ]; then
+    echo -e "\n \e[92m Set the i3status options ..\e[0m"
+    rm ~/.i3status.conf
+    ln -sf $HOME/.ripper/includes/.i3status.conf $HOME/.i3status.conf
+else
+    echo -e "\n \e[92m Set the i3status options ..\e[0m"
+    echo -e "\n \e[92m Copy the i3status options ..\e[0m"
+    ln -sf $HOME/.ripper/includes/.i3status.conf $HOME/.i3status.conf
+
+fi
+
 if [ -f ~/.rofirc ]; then
     echo -e "\n \e[92m Set the rofi options ..\e[0m"
     rm ~/.rofirc
@@ -106,5 +117,25 @@ else
     echo -e "\n \e[92m Set the vim options ..\e[0m"
     echo -e "\n \e[92m Copy the vim options ..\e[0m"
     ln -sf $HOME/.ripper/includes/.vimrc.local $HOME/
+fi
+
+if [ -f ~/.config/gtk-3.0/settings.ini ]; then
+    echo -e "\n \e[92m Set the gtk3.0 options ..\e[0m"
+    rm ~/.config/gtk-3.0/settings.ini
+    ln -sf $HOME/.ripper/includes/.settings.ini $HOME/.config/gtk-3.0/settings.ini
+else
+    echo -e "\n \e[92m Set the gtk3.0 options ..\e[0m"
+    echo -e "\n \e[92m Copy the gtk3.0 options ..\e[0m"
+    ln -sf $HOME/.ripper/includes/.settings.ini $HOME/.config/gtk-3.0/settings.ini
+fi
+
+if [ -f ~/.gtkrc-2.0 ]; then
+    echo -e "\n \e[92m Set the gtk2.0 options ..\e[0m"
+    rm ~/.gtkrc-2.0
+    ln -sf $HOME/.ripper/includes/.gtkrc-2.0 $HOME/
+else
+    echo -e "\n \e[92m Set the gtk2.0 options ..\e[0m"
+    echo -e "\n \e[92m Copy the gtk2.0 options ..\e[0m"
+    ln -sf $HOME/.ripper/includes/.gtkrc-2.0 $HOME/
 fi
 echo -e "\n \e[95m Please windows + R for reload i3 config\e[0m"
