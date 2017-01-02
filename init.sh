@@ -22,6 +22,7 @@ sudo pacman -S --noconfirm httpie
 sudo pacman -S --noconfirm rofi
 yaourt -S --noconfirm spotify
 yaourt -S --noconfirm gpmdp
+yaourt -S --noconfirm vocal
 
 echo -e "\n \e[92m Install Nozbe \e[0m"
 cd

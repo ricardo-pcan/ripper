@@ -234,6 +234,7 @@ for_window [title="Spotify"] floating enable, move scratchpad, scratchpad show, 
 for_window [title="Google Play Music Desktop Player"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark gmusic
 for_window [title="Inbox • Nozbe"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark nozbe
 for_window [class="Franz"] floating enable, move scratchpad, scratchpad show, resize set 1100 900, move position center, mark franz
+for_window [title="todoist"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark todo
 
 # Shortcuts
 bindsym $mod_a+Shift+F1 --no-startup-id exec pcmanfm
@@ -241,6 +242,7 @@ bindsym $mod_a+1 exec --no-startup-id spotify
 bindsym $mod_a+2 exec --no-startup-id gpmdp
 bindsym $mod_a+3 exec --no-startup-id ~/.Nozbe/Nozbe
 bindsym $mod_a+4 exec --no-startup-id franz-bin
+bindsym $mod_a+5 exec /usr/bin/chromium --profile-directory=Default --app-id=bgjohebimpjdhhocbknplfelpmdhifhd
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Scratchpad windows
@@ -248,6 +250,7 @@ bindsym $mod_a+s [con_mark="^spotify$"] scratchpad show
 bindsym $mod_a+m [con_mark="^gmusic$"] scratchpad show
 bindsym $mod_a+n [con_mark="^nozbe$"] scratchpad show
 bindsym $mod_a+f [con_mark="^franz$"] scratchpad show
+bindsym $mod_a+t [con_mark="^todo$"] scratchpad show
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
