@@ -19,7 +19,7 @@
 "PHP LINTER
 let g:phpqa_codesniffer_args = "--standard=PSR1,PSR2"
 let g:phpqa_messdetector_ruleset = "~/.config/composer/vendor/bin/phpmd"
-let g:phpqa_codesniffer_cmd = "~/.config/composer/vendor/bin/llphpcs"
+let g:phpqa_codesniffer_cmd = "~/.config/composer/vendor/bin/phpcs"
 
 "CUSTOM HOT KEYS
     set hidden
@@ -29,6 +29,7 @@ let g:phpqa_codesniffer_cmd = "~/.config/composer/vendor/bin/llphpcs"
 
 "OTHERS AND FRIENDS
     set t_Co=256
+    set nofoldenable
 
     augroup myvimrchooks
         au!
