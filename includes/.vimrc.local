@@ -3,9 +3,13 @@
     Plugin 'joonty/vim-phpqa.git'
     Plugin 'christoomey/vim-tmux-navigator'
 
+"NERDTree
+    let g:NERDTreeWinPos = "right"
+
+    set nofoldenable
 "VIM AIRLINE
     set laststatus=2
-    let g:airline#extensions#rabline#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1
     let g:airline_theme='durant'
     let g:airline_powerline_fonts = 1
     if !exists('g:airline_symbols')

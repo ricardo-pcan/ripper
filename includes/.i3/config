@@ -42,8 +42,8 @@ hide_edge_borders both
 floating_modifier $mod
 font pango:System San Francisco Display 11
 focus_follows_mouse no
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+c restart
 # cl    ass                 border  backgr. text    indic.  child_border
 client.focused          $base01 $base01    $base07 $base0F
 client.focused_inactive $base02 $base02    $base03 $base0F
@@ -107,7 +107,6 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id franz-bin
-exec --no-startup-id ~/.Nozbe/Nozbe
 
 # change focus
 bindsym $mod+h     focus left
@@ -233,14 +232,14 @@ for_window [title="Google Play Music Desktop Player"] floating enable, move scra
 for_window [title="Inbox • Nozbe"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark nozbe
 for_window [class="Franz"] floating enable, move scratchpad, scratchpad show, resize set 1100 900, move position center, mark franz
 for_window [title="todoist"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark todo
-
+for_window [title="Pomodoro Timer"] floating enable, move scratchpad, scratchpad show, resize set 600 900, move position center, mark timer
 # Shortcuts
 bindsym $mod_a+Shift+F1 --no-startup-id exec pcmanfm
-bindsym $mod_a+1 exec --no-startup-id spotify
-bindsym $mod_a+2 exec --no-startup-id gpmdp
-bindsym $mod_a+3 exec --no-startup-id ~/.Nozbe/Nozbe
-bindsym $mod_a+4 exec --no-startup-id franz-bin
-bindsym $mod_a+5 exec /usr/bin/chromium --profile-directory=Default --app-id=bgjohebimpjdhhocbknplfelpmdhifhd
+bindsym $mod_a+Shift+s exec --no-startup-id spotify
+bindsym $mod_a+Shift+m exec --no-startup-id gpmdp
+bindsym $mod_a+Shift+p exec /usr/bin/chromium --profile-directory=Default --app-id=hfgjlgjnpkpmnpojkkpfkogapiclopop
+bindsym $mod_a+Shift+f exec --no-startup-id franz-bin
+bindsym $mod_a+Shift+t exec /usr/bin/chromium --profile-directory=Default --app-id=bgjohebimpjdhhocbknplfelpmdhifhd
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Scratchpad windows
@@ -249,6 +248,7 @@ bindsym $mod_a+m [con_mark="^gmusic$"] scratchpad show
 bindsym $mod_a+n [con_mark="^nozbe$"] scratchpad show
 bindsym $mod_a+f [con_mark="^franz$"] scratchpad show
 bindsym $mod_a+t [con_mark="^todo$"] scratchpad show
+bindsym $mod_a+p [con_mark="^timer$"] scratchpad show
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
