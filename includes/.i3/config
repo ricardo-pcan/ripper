@@ -227,10 +227,10 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [title="Spotify"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark spotify
+for_window [title="Spotify"] floating enable, move scratchpad, scratchpad show, resize set 1300 800, move position center, mark spotify
 for_window [title="Google Play Music Desktop Player"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark gmusic
-for_window [title="Inbox • Nozbe"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark nozbe
-for_window [class="Franz"] floating enable, move scratchpad, scratchpad show, resize set 1100 900, move position center, mark franz
+for_window [title="Inbox • Nozbe"] floating enable, move scratchpad, scratchpad show, resize set 1500 800, move position center, mark nozbe
+for_window [class="Franz"] floating enable, move scratchpad, scratchpad show, resize set 1500 900, move position center, mark franz
 for_window [title="todoist"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark todo
 for_window [title="Pomodoro Timer"] floating enable, move scratchpad, scratchpad show, resize set 600 900, move position center, mark timer
 # Shortcuts

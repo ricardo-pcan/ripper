@@ -70,7 +70,8 @@
     set nofoldenable
     filetype plugin indent on
     set encoding=utf-8
-    set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+    set guifont=Monospace\ 12
 
 " NERDTress File highlighting
     function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
