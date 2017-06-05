@@ -107,6 +107,7 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id franz-bin
+exec --no-startup-id yakuake
 
 # change focus
 bindsym $mod+h     focus left
@@ -198,7 +199,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Open applications on specific workspaces
-assign [class="Pcmanfm"] $workspace2
+assign [class="Dolphin"] $workspace2
 
 # Open specific applications in floating mode
 for_window [urgent=latest] focus
@@ -233,8 +234,9 @@ for_window [title="Inbox • Nozbe"] floating enable, move scratchpad, scratchpa
 for_window [class="Franz"] floating enable, move scratchpad, scratchpad show, resize set 1500 900, move position center, mark franz
 for_window [title="todoist"] floating enable, move scratchpad, scratchpad show, resize set 900 800, move position center, mark todo
 for_window [title="Pomodoro Timer"] floating enable, move scratchpad, scratchpad show, resize set 600 900, move position center, mark timer
+for_window [instance="yakuake"] floating enable;
 # Shortcuts
-bindsym $mod_a+Shift+F1 --no-startup-id exec pcmanfm
+bindsym $mod_a+Shift+d --no-startup-id exec dolphin
 bindsym $mod_a+Shift+s exec --no-startup-id spotify
 bindsym $mod_a+Shift+m exec --no-startup-id gpmdp
 bindsym $mod_a+Shift+p exec /usr/bin/chromium --profile-directory=Default --app-id=hfgjlgjnpkpmnpojkkpfkogapiclopop
@@ -247,8 +249,8 @@ bindsym $mod_a+s [con_mark="^spotify$"] scratchpad show
 bindsym $mod_a+m [con_mark="^gmusic$"] scratchpad show
 bindsym $mod_a+n [con_mark="^nozbe$"] scratchpad show
 bindsym $mod_a+f [con_mark="^franz$"] scratchpad show
-bindsym $mod_a+t [con_mark="^todo$"] scratchpad show
 bindsym $mod_a+p [con_mark="^timer$"] scratchpad show
+
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
