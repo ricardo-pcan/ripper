@@ -4,6 +4,8 @@
     Plugin 'christoomey/vim-tmux-navigator'
     Plugin 'ryanoasis/vim-devicons'
     Plugin 'junegunn/vim-emoji'
+    Plugin 'maxmellon/vim-jsx-pretty'
+    Plugin 'nvie/vim-flake8'
 
 "NERDTree
     let g:NERDTreeWinPos = "right"
