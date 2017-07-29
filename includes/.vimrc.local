@@ -61,6 +61,8 @@
     let g:phpqa_messdetector_ruleset = "~/.config/composer/vendor/bin/phpmd"
     let g:phpqa_codesniffer_cmd = "~/.config/composer/vendor/bin/phpcs"
 
+    let g:syntastic_ruby_checkers=['rubocop', 'mri']
+
 "CUSTOM HOT KEYS
     set hidden
     nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>

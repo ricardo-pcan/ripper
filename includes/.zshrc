@@ -8,6 +8,13 @@
     export RIPPER_MEDIA_ROOT=/home/$USER/mysync/
     export MYNAME=CANDO
 
+    export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
+    export TTC_REPOS='~/mywork/vinco/troop'
+    export TTC_WEATHER='Mexico'
+    export TTC_CELSIUS=true
+    export TTC_APIKEYS=true
+    export TTC_UPDATE_INTERVAL=10
+
 # System configs
     export EDITOR='vim'
     export TERM="xterm-256color"
@@ -132,3 +139,6 @@
 # Evals
     eval "$(jenv init -)"
     eval "$(pyenv init -)"
+
+chmod +x ~/.vocab
+~/.vocab
