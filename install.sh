@@ -38,14 +38,26 @@ load_config() {
         tmux source-file ~/.tmux.conf
     fi
 
+    if [ -f ~/.tmux.conf.local ]; then
+        echo -e "\n \e[92m Set the tmux options ..\e[0m"
+        rm ~/.tmux.conf.local
+        ln -sf $HOME/.ripper/includes/.tmux.conf.local $HOME/
+        tmux source-file ~/.tmux.conf.local
+    else
+        echo -e "\n \e[92m Set the tmux options ..\e[0m"
+        echo -e "\n \e[92m Copy the tmux file ..\e[0m"
+        ln -sf $HOME/.ripper/includes/.tmux.conf.local $HOME/
+        tmux source-file ~/.tmux.conf.local
+    fi
+
     if [ -f ~/.i3/config ]; then
         echo -e "\n \e[92m Set the i3 options ..\e[0m"
-        rm ~/.i3/config
-        ln -sf $HOME/.ripper/includes/.i3/config $HOME/.i3/
+        rm -rf ~/.i3/config
+        ln -sf $HOME/.ripper/includes/.i3/config $HOME/.i3/config
     else
         echo -e "\n \e[92m Set the i3 options ..\e[0m"
         echo -e "\n \e[92m Copy the i3 options ..\e[0m"
-        ln -sf $HOME/.ripper/includes/.i3/config $HOME/.i3/
+        ln -sf $HOME/.ripper/includes/.i3/config $HOME/.i3/config
 
     fi
 

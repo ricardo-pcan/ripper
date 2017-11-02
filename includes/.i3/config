@@ -1,3 +1,4 @@
+
 set $mod Mod4
 set $mod_a Mod1
 
@@ -35,9 +36,29 @@ set $workspace13 "13: "
 set $workspace14 "14: "
 set $workspace15 "15: "
 
+
+set_from_resource	  $background_i3wmthemer	background
+set_from_resource	  $foreground_i3wmthemer	foreground
+set_from_resource	  $color00_i3wmthemer		  color0
+set_from_resource 	$color01_i3wmthemer 	    color1
+set_from_resource 	$color02_i3wmthemer 	    color2
+set_from_resource 	$color03_i3wmthemer 	    color3
+set_from_resource 	$color04_i3wmthemer 	    color4
+set_from_resource 	$color05_i3wmthemer 	    color5
+set_from_resource 	$color06_i3wmthemer		  color6
+set_from_resource	  $color07_i3wmthemer		  color7
+set_from_resource	  $color08_i3wmthemer		  color8
+set_from_resource	  $color09_i3wmthemer		  color9
+set_from_resource	  $color10_i3wmthemer	    color10
+set_from_resource	  $color11_i3wmthemer	    color11
+set_from_resource	  $color12_i3wmthemer	    color12
+set_from_resource	  $color13_i3wmthemer	    color13
+set_from_resource	  $color14_i3wmthemer	    color14
+set_from_resource	  $color15_i3wmthemer	    color15
+
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 1
-new_float normal
+new_float pixel 1
 hide_edge_borders both
 floating_modifier $mod
 font pango:System San Francisco Display 11
@@ -45,11 +66,11 @@ focus_follows_mouse no
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+c restart
 # cl    ass                 border  backgr. text    indic.  child_border
-client.focused          $base01 $base01    $base07 $base0F
-client.focused_inactive $base02 $base02    $base03 $base0F
-client.unfocused        $base02 $base02    $base03 $base0F
-client.urgent           $base02 $base08    $base00 $base0F
-client.background       #2B2C2B
+client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer	$background_i3wmthemer
+client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer	$background_i3wmthemer
+client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer	$background_i3wmthemer
+client.background	$background_i3wmthemer
 gaps inner 10
 gaps outer -4
 smart_gaps on
