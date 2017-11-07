@@ -65,12 +65,6 @@ font pango:System San Francisco Display 11
 focus_follows_mouse no
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+c restart
-# cl    ass                 border  backgr. text    indic.  child_border
-client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
-client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer	$background_i3wmthemer
-client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer	$background_i3wmthemer
-client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer	$background_i3wmthemer
-client.background	$background_i3wmthemer
 gaps inner 10
 gaps outer -4
 smart_gaps on
@@ -113,7 +107,8 @@ mode "$mode_gaps_outer" {
 
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec rofi -show run -font "System San Francisco Display 20" -lines 3 -eh 2 -width 100 -padding 400 -opacity "95" -bw 0 -config ~/.rofirc
+# bindsym $mod+d exec rofi -show run -font "System San Francisco Display 20" -lines 3 -eh 2 -width 100 -padding 400 -opacity "95" -bw 0 -config ~/.rofirc
+bindsym $mod+d exec rofi -show run -font "System San Francisco Display 20"
 bindsym $mod+z exec --no-startup-id morc_menu
 
 # On start
@@ -129,7 +124,7 @@ exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id franz-bin
 exec --no-startup-id twmnd
-exec sh /home/$USER/.ripper/screens/$MYNAME.sh
+exec /home/$USER/.ripper/screens/nuc.sh
 
 # change focus
 bindsym $mod+h     focus left

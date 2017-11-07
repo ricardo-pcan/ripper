@@ -6,7 +6,7 @@
     export JENV_ROOT=/home/$USER/.jenv/
     export RIPPER_ROOT=/home/$USER/.ripper
     export RIPPER_MEDIA_ROOT=/home/$USER/mysync/
-    export MYNAME=CANDO
+    export MYNAME=nuc
 
     export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
     export TTC_REPOS='~/mywork/vinco/troop'
